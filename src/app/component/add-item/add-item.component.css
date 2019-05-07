@@ -1,0 +1,62 @@
+.add-form-form-root {
+    width: 80%;
+    margin: 0 auto;
+}
+
+  input {
+    width: 100%;
+}
+
+.form-control.ng-touched.ng-invalid {
+  border-color: red;
+}
+
+.form-control.ng-touched.ng-valid {
+  border-color: green;
+}
+
+.add-form-form-root {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.close-modal{
+  cursor: pointer;
+}
+
+.close-modal::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1.5em;
+  content: "\f00d";
+}
+
+.add-item-component-button {
+  padding-top: 25px;
+}
+
+.add-tem-component-header {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.btn {
+  color: white;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.mat-error {
+  position: absolute;
+  font-size: 0.75em;
+ }
+
+
+ input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

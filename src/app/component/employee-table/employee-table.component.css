@@ -1,0 +1,55 @@
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.add-item-button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.row-modify-button:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f044";
+}
+
+.row-modify-button {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.row-delete-button{
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.row-delete-button:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: red;
+  content: "\f2ed";
+}
+
+.mat-header-cell {
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+	background-color: #ea8c2a;
+}
+
+td.mat-cell {
+  border-bottom-width: 3px;
+}
+
+tr.mat-row {
+  height: 60px;
+}
+
+.add-item-button {
+  color: white;
+	background-color: #ea8c2a;
+}

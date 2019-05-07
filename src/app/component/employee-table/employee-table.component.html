@@ -1,0 +1,79 @@
+<div class="employee-table-root">
+  <button class="add-item-button" mat-raised-button (click)="onCreate()">
+    Add New Employee
+  </button>
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+    <!-- Employee ID -->
+    <ng-container matColumnDef="empId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Employee ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.empId}} </td>
+    </ng-container>
+
+    <!-- First Name Column -->
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+    </ng-container>
+
+    <!-- Last Name Column -->
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+    </ng-container>
+
+    <!-- Gender Column -->
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Gender </th>
+      <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+    </ng-container>
+
+    <!-- Age Column -->
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Age </th>
+      <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+    </ng-container>
+
+    <!-- Basic Salary Column -->
+    <ng-container matColumnDef="basicSalary">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Basic Salary </th>
+      <td mat-cell *matCellDef="let element"> {{element.basicSalary}} </td>
+    </ng-container>
+
+    <!-- Meal Transport Allowance Column -->
+    <ng-container matColumnDef="mealTransportAllowance">
+      <th mat-header-cell *matHeaderCellDef> Allowance </th>
+      <td mat-cell *matCellDef="let element"> {{element.mealTransportAllowance}} </td>
+    </ng-container>
+
+    <!-- Insurance Column -->
+    <ng-container matColumnDef="insurance">
+      <th mat-header-cell *matHeaderCellDef> Insurance </th>
+      <td mat-cell *matCellDef="let element"> {{element.insurance}} </td>
+    </ng-container>
+
+    <!-- Tax Column -->
+    <ng-container matColumnDef="tax">
+      <th mat-header-cell *matHeaderCellDef> Tax </th>
+      <td mat-cell *matCellDef="let element"> {{element.tax}} </td>
+    </ng-container>
+
+    <!-- Net Salary Column Column -->
+    <ng-container matColumnDef="netSalary">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Net Salary </th>
+      <td mat-cell *matCellDef="let element"> {{element.netSalary}} </td>
+    </ng-container>
+
+    <!-- Action Column-->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row">
+        <span class="row-modify-button" (click)="onModify(row)"></span>
+        <span class="row-delete-button" (click)="onDelete(row.empId)"></span>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

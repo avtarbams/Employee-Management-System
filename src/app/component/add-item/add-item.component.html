@@ -1,0 +1,79 @@
+<div class="close-modal float-right" (click)="closeModal()"></div>
+<div class="add-tem-component-header">{{generateEmployeeFormHeader()}}</div>
+<div class="add-form-form-root">
+  <form [formGroup]="addRecordForm">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" formControlName="firstName">
+          <mat-error *ngIf="firstName.touched && firstName.errors">{{getErrorMessageForFirstName()}}</mat-error>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" formControlName="lastName">
+          <mat-error *ngIf="lastName.touched && lastName.errors">{{getErrorMessageForLastName()}}</mat-error>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select class="custom-select form-control" formControlName="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" class="form-control" formControlName="age">
+          <mat-error *ngIf="age.touched && age.errors">{{getErrorMessageForAge()}}</mat-error>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="basicSalary">Basic Salary</label>
+          <input type="number" class="form-control" formControlName="basicSalary">
+          <mat-error *ngIf="basicSalary.touched && basicSalary.errors">{{getErrorMessageForBasicSalary()}}</mat-error>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="allowance">Meal Transport Allowance</label>
+          <input type="number" class="form-control" formControlName="mealTransportAllowance">
+          <mat-error *ngIf="mealTransportAllowance.touched && mealTransportAllowance.errors">{{getErrorMessageForAllowance()}}</mat-error>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="insurance">Insurance</label>
+          <input type="number" class="form-control" formControlName="insurance">
+          <mat-error *ngIf="insurance.touched && insurance.errors">{{getErrorMessageForInsurance()}}</mat-error>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="tax">Tax</label>
+          <input type="number" class="form-control" formControlName="tax">
+          <mat-error *ngIf="tax.touched && tax.errors">{{getErrorMessageForTax()}}</mat-error>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="net">Net Salary</label>
+          <input type="number" class="form-control" formControlName="netSalary" value="netSalary">
+          <mat-error *ngIf="netSalary.touched && netSalary.errors">{{getErrorMessageForNetSalary()}}</mat-error>
+        </div>
+      </div>
+    </div>
+    <div class="add-item-component-button">
+      <button class="btn btn-success" *ngIf="data.action === 'add'" (click)="addEmployee()"
+        [disabled]="addRecordForm.invalid" mat-dialog-close>Add Employee</button>
+      <button class="btn btn-danger" *ngIf="data.action === 'modify'" (click)="modifyEmployee()"
+        [disabled]="addRecordForm.invalid" mat-dialog-close>Modify Data</button>
+    </div>
+  </form>
+</div>
